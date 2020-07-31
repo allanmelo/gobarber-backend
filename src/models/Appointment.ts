@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import {
   Entity,
   Column,
@@ -20,7 +19,7 @@ class Appointment {
   provider_id: string;
 
   @ManyToOne(() => User)
-  @JoinColumn({ name: 'provider_id' })
+  @JoinColumn({ name: 'provider_id', referencedColumnName: 'id' })
   provider: User;
 
   @Column('timestamp with time zone')
